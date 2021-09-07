@@ -1,12 +1,16 @@
 import pandas as pd
 
-from utils.manipulate_data import *
-from utils.visualise import *
+
 import numpy as np
 from tensorflow import keras
 from tensorflow.keras.optimizers import Adam
-
+from sklearn.metrics import classification_report
 import matplotlib.pyplot as plt
+
+
+from utils.manipulate_data import *
+from utils.visualise import *
+
 
 wine_full = pd.read_csv('../../additional_resources/datasets/Wine Quality/wine.csv')
 wine_full.drop('index', axis=1, inplace=True)
@@ -36,10 +40,11 @@ if __name__ == '__main__':
     model.save('models/model_v1')
 
 
-    history = model.fit(X_train, y_train, epochs=100, batch_size=32)
+    history = model.fit(X_train, y_train, epochs=100, batch_size=32, validation_split=.1)
 
     plot_loss_accuracy(history)
 
     y_pred = (model.predict(X_test) > 0.5).astype("int32")
-    results = model.evaluate(X_test, y_pred, batch_size=32)
+    results = model.evaluate(X_test, y_test, batch_size=32)
     print(f"Accuracy on test set is {results[1] * 100:.2f}%")
+    print(classification_report(y_test, y_pred))
