@@ -35,6 +35,12 @@ We were provided with a wine dataset with contained data on red and white wines.
 
 # Stages of the project 
 
+## target values analysis
+
+<img src="visuals/count_quality_original.png" width="500"/>
+
+
+
 ## Binary classifier 
 Divide target values into two categories (0 or 1) with the mean as threshold:
 
@@ -42,6 +48,10 @@ Divide target values into two categories (0 or 1) with the mean as threshold:
 |-------------------|----------------------------------------------|
 | 3, 4, 5 | 0 (bad)                         |
 | 6, 7, 8, 9 | 1 (good) | 
+
+<img src="visuals/count_quality_binary.png" width="500"/>
+
+- In choosing the mean as the threshold, the good wines are overrepresented in the dataset.
 
 ### Comparing a random base model to grid searched 
 
