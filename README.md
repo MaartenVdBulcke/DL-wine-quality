@@ -96,7 +96,8 @@ Below are the values I used to define the some hyperparameters:
 |  test | 0.751 |0.759  | 
 
 - there is no overfitting
-- grid searching improves the performance of the model, but the gain is negligible
+- grid searching does not improve the model
+
 
 #### ROC curve & precision-recall 
 
