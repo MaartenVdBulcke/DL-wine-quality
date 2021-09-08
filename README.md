@@ -48,7 +48,7 @@ Divide target values into two categories (0 or 1) with the mean as threshold:
 #### Model architecture
 ##### Base model 
 
-![](visuals/base_model.png)
+<img src="visuals/base_model.png" width="300"/>
 
 ##### RandomGridCV and GridSearchCV
 
@@ -81,12 +81,16 @@ Below are the values I used to define the some hyperparameters:
 
 ##### model architecture after grid search
 
-![](visuals/grid_model.png)
+<img src="visuals/grid_model.png" width="300"/>
 
 
 #### Accuracies
 
-![](visuals/normalised_accuracies.png) ![](visuals/grid_accuracies.png)
+According to the accuracies: 
+- there is no overfitting
+- grid searching does not improve the model
+
+<img src="visuals/normalised_accuracies.png" width="400"/> <img src="visuals/grid_accuracies.png" width="400"/>
 
 
 | set  | base model  | grid searched | 
@@ -95,17 +99,16 @@ Below are the values I used to define the some hyperparameters:
 | validation | 0.732 | 0.754  |
 |  test | 0.751 |0.759  | 
 
-- there is no overfitting
-- grid searching does not improve the model
+
 
 
 #### ROC curve & precision-recall 
 
 - According to these metrics, the models perform very similar
 
-![](visuals/normalised_roccurve.png) ![](visuals/grid_roccurve.png) 
+<img src="visuals/normalised_roccurve.png" width="400"/> <img src="visuals/grid_roccurve.png" width="400"/>
 
-![](visuals/normalised_precisionrecall.png) ![](visuals/grid_precisionrecall.png) 
+<img src="visuals/normalised_precisionrecall.png" width="400"/> <img src="visuals/grid_precisionrecall.png" width="400"/>
 
 
 
