@@ -62,7 +62,7 @@ Divide target values into two categories (0 or 1) with the mean as threshold:
 
 ##### RandomGridCV and GridSearchCV
 
-Below are the values I used to define the some hyperparameters:
+Below are the values I used to define some hyperparameters:
 
 ###### Random grid search
 
@@ -97,7 +97,7 @@ Below are the values I used to define the some hyperparameters:
 #### Confusion matrix
 According to the confusion matrixes of both models, grid searching improves classification. The improvement is negligible though:
 
-<img src="visuals/base_confusionmatrix.png" width="300"/> <img src="visuals/grid_confusionmatrix.png" width="300"/>
+<img src="visuals/base_confusionmatrix.png" width="450"/> <img src="visuals/grid_confusionmatrix.png" width="450"/>
 
 
 #### Accuracies
@@ -107,7 +107,7 @@ According to the accuracies, there is no overfitting:
 <!--<img src="visuals/normalised_accuracies.png" width="400"/> <img src="visuals/grid_accuracies.png" width="400"/>-->
 
 
-| set  | base model  | grid searched | 
+| set  | base model  | grid searched model | 
 |-------|--------------|----------|
 | train | 0.772   |0.780  |
 | validation | 0.732 | 0.754  |
