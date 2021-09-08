@@ -84,13 +84,17 @@ Below are the values I used to define the some hyperparameters:
 <img src="visuals/grid_model.png" width="300"/>
 
 
+#### Confusion matrix
+According to the confusion matrixes of both models, grid searching improves classification. The improvement is negligible though:
+
+<img src="visuals/base_confusionmatrix.png" width="300"/> <img src="visuals/grid_confusionmatrix.png" width="300"/>
+
+
 #### Accuracies
 
-According to the accuracies: 
-- there is no overfitting
-- grid searching does not improve the model
+According to the accuracies, there is no overfitting: 
 
-<img src="visuals/normalised_accuracies.png" width="400"/> <img src="visuals/grid_accuracies.png" width="400"/>
+<!--<img src="visuals/normalised_accuracies.png" width="400"/> <img src="visuals/grid_accuracies.png" width="400"/>-->
 
 
 | set  | base model  | grid searched | 
