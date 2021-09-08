@@ -86,11 +86,11 @@ Below are the values I used to define the some hyperparameters:
 
 #### Accuracies
 
-![](visuals/normalised_accuracies.png) 
-![](visuals/grid_accuracies.png)
+![](visuals/normalised_accuracies.png) ![](visuals/grid_accuracies.png)
+
 
 | set  | base model  | grid searched | 
-|-------|------------------------|
+|-------|--------------|----------|
 | train | 0.772   |0.780  |
 | validation | 0.732 | 0.754  |
 |  test | 0.751 |0.759  | 
@@ -102,11 +102,9 @@ Below are the values I used to define the some hyperparameters:
 
 - According to these metrics, the models perform very similar
 
-![](visuals/normalised_roccurve.png) 
-![](visuals/grid_roccurve.png) 
+![](visuals/normalised_roccurve.png) ![](visuals/grid_roccurve.png) 
 
-![](visuals/normalised_precisionrecall.png) 
-![](visuals/grid_precisionrecall.png) 
+![](visuals/normalised_precisionrecall.png) ![](visuals/grid_precisionrecall.png) 
 
 
 
