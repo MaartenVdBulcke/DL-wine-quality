@@ -14,8 +14,6 @@ if __name__=='__main__':
     from visualise import *
 
 
-
-
 def perform_random_grid_and_grid_search(X_train, y_train, X_val, y_val, X_test, y_test):
     keras_classifier = keras.wrappers.scikit_learn.KerasClassifier(build_model_for_grid)
 
