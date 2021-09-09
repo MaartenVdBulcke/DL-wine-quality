@@ -100,7 +100,7 @@ Below are the values I used to define some hyperparameters:
 * Accuracy scores after grid searching barely improve. 
 * According to the accuracies, there is no overfitting. EarlyStopping was used in the model fitting.  
 
-<!--<img src="visuals/normalised_accuracies.png" width="400"/> <img src="visuals/grid_accuracies.png" width="400"/>-->
+<!--<img src="visuals/normalised_accuracies.png" width="375"/> <img src="visuals/grid_accuracies.png" width="375"/>-->
 
 
 | set  | base model  | grid searched model | 
@@ -114,9 +114,9 @@ Below are the values I used to define some hyperparameters:
 
 - According to these metrics, the models perform very similar
 
-<img src="visuals/normalised_roccurve.png" width="400"/> <img src="visuals/grid_roccurve.png" width="400"/>
+<img src="visuals/normalised_roccurve.png" width="375"/> <img src="visuals/grid_roccurve.png" width="375"/>
 
-<!--<img src="visuals/normalised_precisionrecall.png" width="400"/> <img src="visuals/grid_precisionrecall.png" width="400"/>-->
+<!--<img src="visuals/normalised_precisionrecall.png" width="375"/> <img src="visuals/grid_precisionrecall.png" width="375"/>-->
 
 
 ## Feature engineering
@@ -129,7 +129,7 @@ The models above are trained on an imbalanced training set (more good wines than
 * Use t-SNE to decide how to divide these wines into two groups. 
 * Compare wines of quality 5, 6 and 7
 
-<img src="visuals/tsne_567_alcohol.png" width="450"/> <img src="visuals/tsne_567_quality.png" width="450"/>
+<img src="visuals/tsne_567_alcohol.png" width="375"/> <img src="visuals/tsne_567_quality.png" width="375"/>
 
 * Quality and alcohol have the best correspondence, as can be seen on the graphs
 * Choose a threshold to separate wines of quality 6 according to alcohol level (the higher, the better)
@@ -159,7 +159,7 @@ The models above are trained on an imbalanced training set (more good wines than
 
 #### ROC curve
 
-<img src='visuals/split_roccurve.png' width='425' /> <img src='visuals/drop_try_roccurve.png' width='425' />
+<img src='visuals/split_roccurve.png' width='375' /> <img src='visuals/drop_try_roccurve.png' width='375' />
 
 
 ## Comparing RandomForest performance on two datasets
@@ -175,7 +175,9 @@ The models above are trained on an imbalanced training set (more good wines than
 * RandomForest gets biased towards good wines in the dataset without engineering.  
 * Feature engineering on the model improves this bias a lot.
 
-<img src="visuals/forest_confusion.png" width="425"/> <img src="visuals/forest_confusion_after_feature.png" width=425 />
+<img src="visuals/forest_confusion.png" width="375"/> <img src="visuals/forest_confusion_after_feature.png" width="375" />
+
+<img src="visuals/ROC_forest_nofeature.png" width="375"/> <img src="visuals/drop_feat_roccurve.png" width="375">
 
 
 ### Conclusions 
