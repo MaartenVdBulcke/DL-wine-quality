@@ -178,7 +178,7 @@ The models above are trained on an imbalanced training set (more good wines than
 
 <img src="visuals/forest_confusion.png" width="375"/> <img src="visuals/forest_confusion_after_feature.png" width="375" />
 
-<img src="visuals/ROC_forest_nofeature.png" width="375"/> <img src="visuals/drop_feat_roccurve.png" width="375">
+<img src="visuals/ROC_forest_nofeature.png" width="375"/> <img src="drop_feat_roccurve.png" width="375">
 
 
 ### Conclusions 
