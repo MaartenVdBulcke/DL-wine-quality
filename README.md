@@ -31,16 +31,17 @@ We were provided with a wine dataset which contained data on red and white wines
 | data/wine_full.csv| Original csv-file with wine data                            |
 | utils/manipulate_data.py | Python script containing functions for dataset manipulation|
 | utils/visualise.py | Python script containing functions for plotting the data | 
+| utils/create_model.py | Python script containing functions for constructing a base model for grid searching   |
+| utils/grid_search.py | Python script containing functions for performing grid search on a neural network   |
 | visuals          | Directory containing graphics                               |
+| notebooks        | Directory containing the notebooks used                     |
 | main.py          | Python script with the final version of the project | 
 
 
 
-# Stages of the project 
+# Binary Classification
 
 ## Target values
-
-<img src="visuals/count_quality_original.png" width="500"/>
 
 - I will construct a binary classifier. 
 - I divide target values into two categories (0 and 1) with the mean of the quality as a threshold:
@@ -50,14 +51,14 @@ We were provided with a wine dataset which contained data on red and white wines
 | 3, 4, 5 | 0 (bad)                         |
 | 6, 7, 8, 9 | 1 (good) | 
 
-<img src="visuals/count_quality_binary.png" width="500"/>
+<img src="visuals/count_quality_original.png" width="425"/> <img src="visuals/count_quality_binary.png" width="425"/>
 
 - In choosing the mean as the threshold, the good wines are overrepresented in the dataset.
 
 ## Model architectures
 ### A first, random model
 
-<img src="visuals/base_model.png" width="300"/>
+<img src="visuals/base_model.png" width="250" />
 
 ### Perform RandomGridCV and GridSearchCV to hypertune parameters
 
@@ -90,7 +91,7 @@ Below are the values I used to define some hyperparameters:
 
 ### Model architecture after grid search
 
-<img src="visuals/grid_model.png" width="300"/>
+<img src="visuals/grid_model.png" width="250"/>
 
 ## Compare the two models 
 
@@ -146,11 +147,13 @@ The models above are trained on an imbalanced training set (more good wines than
 
 ##### Accuracies
 
+
 | set  | base model | grid searched model | splitted dataset model | features dropped model |  
-|-------|------|-----|----------|
+|-------|------|-----|----------|----------|
 | train | 0.772     | 0.780  | 0.880 | 0.867|
 | validation | 0.732   |      0.754  |  0.844| 0.853|
 |  test |  0.751    | 0.759  | 0.867 | 0.878|
+
 
 <img src="visuals/summ_line_accuracies.png" width="800" /> 
 
