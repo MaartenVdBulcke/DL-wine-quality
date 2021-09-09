@@ -2,8 +2,10 @@
 /wine_quality.md
 /models/
 /.ipynb_checkpoints/
-/play_model_v1.ipynb
-/play_model_v2.ipynb
 /my_logs/
 /visuals/.ipynb_checkpoints/
 /data/.ipynb_checkpoints/
+/best_only_v3.h5
+/best_only_v3_early_stopping.h5
+/best_onlybest_grid.h5
+/bestonly_type_balanced.h5
