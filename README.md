@@ -35,7 +35,7 @@ We were provided with a wine dataset with contained data on red and white wines.
 
 # Stages of the project 
 
-## target values analysis
+## Target values analysis
 
 <img src="visuals/count_quality_original.png" width="500"/>
 
@@ -116,15 +116,81 @@ According to the accuracies, there is no overfitting:
 
 
 
-#### ROC curve & precision-recall 
+#### ROC curve
 
 - According to these metrics, the models perform very similar
 
 <img src="visuals/normalised_roccurve.png" width="400"/> <img src="visuals/grid_roccurve.png" width="400"/>
 
-<img src="visuals/normalised_precisionrecall.png" width="400"/> <img src="visuals/grid_precisionrecall.png" width="400"/>
+<!--<img src="visuals/normalised_precisionrecall.png" width="400"/> <img src="visuals/grid_precisionrecall.png" width="400"/>-->
 
 
+### Feature engineering
+
+The models are trained on an imbalanced training set (more good wines than bad wines)
+
+<!--#### Add wine type column-->
+
+<!--* I added a wine type column as extra feature to the dataset, but performance did not really improve -->
+<!--* t-SNE analysis on the combined wine dataset shows that red and white wines are easily separable-->
+
+<!--<img src="visuals/tsne_full_type.png" width="600"/>-->
+
+
+#### Separate good and bad wines of quality 6
+* Separate wines of quality 6 into two groups: one bad and one good. 
+* Goal: get a more balanced target class. 
+
+##### t-SNE to decide how to split the wines
+
+* Compare wines of quality 5, 6 and 7
+* Quality and alcohol have the best correspondence
+
+
+<img src="visuals/tsne_567_alcohol.png
+" width="500"/> <img src="visuals/tsne_567_quality.png
+" width="500"/>
+
+* I have set a threshold to separate wines of quality 6 according to alcohol level
+
+<img src="visuals/split_quality_binary.png
+" width="500"/>
+
+##### Evaluation
+
+* I used the grid searched model on this feature engineered dataset
+###### Confusion matrix
+
+
+
+<img src="visuals/split_confusionmatrix.png
+" width="500"/>
+
+###### Accuracies
+
+  
+| set  | base model | grid searched model | splitted dataset model |  
+|-------|------|-----|----------|
+| train | 0.772     | 0.780  | 0.880 |
+| validation | 0.732   |      0.754  |  0.844|
+|  test |  0.751    | 0.759  | 0.867 |
+
+  
+<img src="visuals/summ_line_accuracies.png" width="800" /> 
+
+#### ROC curve
+
+<img src='visuals/split_roccurve.png' width='500' /> <img src='visuals/drop_try_roccurve.png' width='500' />
+
+### Comparing RandomForest performance on two datasets
+
+* the RandomForestClassifier model is initialized with max_depth=2 to avoid overfitting. 
+
+| set  | without feature engineering | with feature engineering |
+|-------|------|-----|
+| train | 0.717     | 0.860 |
+| validation | 0.720   | 0.860    |
+|  test |  0.730    |  0.842 |
 
 
 
