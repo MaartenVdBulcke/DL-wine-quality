@@ -94,15 +94,16 @@ Below are the values I used to define some hyperparameters:
 <img src="visuals/grid_model.png" width="300"/>
 
 
-#### Confusion matrix
-According to the confusion matrixes of both models, grid searching improves classification. The improvement is negligible though:
+<!--#### Confusion matrix-->
+<!--According to the confusion matrixes of both models, grid searching improves classification. The improvement is negligible though:-->
 
-<img src="visuals/base_confusionmatrix.png" width="450"/> <img src="visuals/grid_confusionmatrix.png" width="450"/>
+<!--<img src="visuals/base_confusionmatrix.png" width="450"/> <img src="visuals/grid_confusionmatrix.png" width="450"/>-->
 
 
 #### Accuracies
 
-According to the accuracies, there is no overfitting: 
+* Accuracy scores after grid searching barely improve. 
+* According to the accuracies, there is no overfitting: 
 
 <!--<img src="visuals/normalised_accuracies.png" width="400"/> <img src="visuals/grid_accuracies.png" width="400"/>-->
 
@@ -127,7 +128,7 @@ According to the accuracies, there is no overfitting:
 
 ### Feature engineering
 
-The models are trained on an imbalanced training set (more good wines than bad wines)
+The models above are trained on an imbalanced training set (more good wines than bad wines). I made the following changes to the data:
 
 <!--#### Add wine type column-->
 
@@ -144,24 +145,25 @@ The models are trained on an imbalanced training set (more good wines than bad w
 ##### t-SNE to decide how to split the wines
 
 * Compare wines of quality 5, 6 and 7
-* Quality and alcohol have the best correspondence
+* Quality and alcohol have the best correspondence, as can be seen on the graphs: 
 
 
 <img src="visuals/tsne_567_alcohol.png
 " width="500"/> <img src="visuals/tsne_567_quality.png
 " width="500"/>
 
-* I have set a threshold to separate wines of quality 6 according to alcohol level
+* I chose a threshold to separate wines of quality 6 according to alcohol level
+* The new distribution of the target class is more balanced:
+
 
 <img src="visuals/split_quality_binary.png
 " width="500"/>
 
-##### Evaluation
+#### Try the neural network on the new dataset
 
 * I used the grid searched model on this feature engineered dataset
+
 ###### Confusion matrix
-
-
 
 <img src="visuals/split_confusionmatrix.png
 " width="500"/>
@@ -169,11 +171,11 @@ The models are trained on an imbalanced training set (more good wines than bad w
 ###### Accuracies
 
   
-| set  | base model | grid searched model | splitted dataset model |  
+| set  | base model | grid searched model | splitted dataset model | features dropped model |  
 |-------|------|-----|----------|
-| train | 0.772     | 0.780  | 0.880 |
-| validation | 0.732   |      0.754  |  0.844|
-|  test |  0.751    | 0.759  | 0.867 |
+| train | 0.772     | 0.780  | 0.880 | 0.867|
+| validation | 0.732   |      0.754  |  0.844| 0.853|
+|  test |  0.751    | 0.759  | 0.867 | 0.878|
 
   
 <img src="visuals/summ_line_accuracies.png" width="800" /> 
@@ -192,6 +194,19 @@ The models are trained on an imbalanced training set (more good wines than bad w
 | validation | 0.720   | 0.860    |
 |  test |  0.730    |  0.842 |
 
+* RandomForest gets biased towards good wines in the dataset without engineering.  
+* Feature engineering on the model improves this bias a lot.
+
+<img src="visuals/forest_confusion.png" width="500"/> <img src="visuals/forest_confusion_after_feature.png" width=500 />
+
+
+### Conclusions 
+
+* Grid searching suggested a more simple model. The resulting hyper-parameters didn't have an impact on the performance of the model.
+
+* Feature engineering was the big step forward. Performance improved a lot after the dataset was altered. This conclusion stands for the neural network and for the Random Forest Classifier.
+
+* In this assignment, feature engineering was more succesful than hypertuning a neural network model.
 
 
 # Contributor
