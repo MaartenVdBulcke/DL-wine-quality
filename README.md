@@ -141,12 +141,17 @@ The models above are trained on an imbalanced training set (more good wines than
 
 * I used the grid searched model on this feature engineered dataset
 
-##### Confusion matrix
-
 <img src="visuals/split_confusionmatrix.png" width="500"/>
 
-##### Accuracies
 
+#### ROC curve
+
+* I tried the same model on a dataset where I dropped some features
+
+<img src='visuals/split_roccurve.png' width='375' /> <img src='visuals/drop_try_roccurve.png' width='375' />
+
+
+##### Accuracies of all 4 models
 
 | set  | base model | grid searched model | splitted dataset model | features dropped model |  
 |-------|------|-----|----------|----------|
@@ -156,10 +161,6 @@ The models above are trained on an imbalanced training set (more good wines than
 
 
 <img src="visuals/summ_line_accuracies.png" width="800" /> 
-
-#### ROC curve
-
-<img src='visuals/split_roccurve.png' width='375' /> <img src='visuals/drop_try_roccurve.png' width='375' />
 
 
 ## Comparing RandomForest performance on two datasets
