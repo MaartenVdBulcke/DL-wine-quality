@@ -71,3 +71,7 @@ if __name__ == '__main__':
     print(f"Accuracy on test set is {results[1] * 100:.2f}%")
     print(classification_report(y_test, y_pred))
     print(tf.math.confusion_matrix(y_test, y_pred))
+
+
+# COACHES NOTES: Super slick! I would add more comments through out in the case you share this with others.
+# who wouldn't have access to the play notebooks. 
